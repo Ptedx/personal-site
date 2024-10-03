@@ -1,5 +1,13 @@
 <script setup lang="ts">
     import Button from '../generals/Button.vue';
+    import { gsap } from 'gsap';
+    import {ref, onMounted} from 'vue'
+
+    const image = ref(null)
+
+    onMounted(()=>{
+        gsap.fromTo(image.value,{ x:50, opacity:0,  duration:0.4}, {x:0,opacity:1, duration:0.4})
+    })
 </script>
 
 <template>
@@ -9,7 +17,7 @@
           <h3>FullStack Developer</h3>
           <Button />
         </div>
-        <div class="image">
+        <div class="image" ref="image">
           <img src="../../assets/img/Profile_s_bg.png" alt="Main Photo" width="100%">
         </div>
     </section>
@@ -49,5 +57,8 @@
             width: 100%;
             margin-bottom: 20px;
         }
+    }
+    .image{
+        opacity: 0;
     }
 </style>

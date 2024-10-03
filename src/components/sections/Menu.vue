@@ -3,25 +3,39 @@
     import { RouterLink } from 'vue-router'
 
     const isMobile = ref(false)
+    const menu = ref<HTMLDivElement>()
+    const initialPosition = ref(0)
+    let hasScrolled = ref(false)
 
     function getMobileSize() {
         isMobile.value =  window.innerWidth <= 768 ? true : false
     }
 
-    onMounted(()=>{
-        getMobileSize()
+    function handleScroll(){
+        if(menu.value){
+            const currentPosition = menu.value.getBoundingClientRect().top + window.scrollY
+            currentPosition > 1? hasScrolled.value = true: hasScrolled.value= false
+        }
+    }
 
+    onMounted(()=>{
+        if(menu.value){
+            initialPosition.value = menu.value.getBoundingClientRect().top + window.scrollY
+        }
+        getMobileSize()
+        window.addEventListener('scroll', handleScroll)
         window.addEventListener('resize', getMobileSize)
     })
 
     onUnmounted(() => {
         window.removeEventListener('resize', getMobileSize)
+        window.removeEventListener('scroll', handleScroll)
     })
 
 </script>
 
 <template>
-    <nav>
+    <nav ref="menu" :class="{'nav-background': hasScrolled, '': !hasScrolled}">
         <img height="60px" src="../../assets/img/Vinicius-logo.png" alt="Logo Vini">
         <div class="links" v-if="!isMobile">
             <RouterLink class="link" to="/">Knowledges</RouterLink>
@@ -45,7 +59,10 @@ nav {
     position: fixed;
     width: 100%;
 }
-
+.nav-background{
+    background-color: white;
+    box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
 .links {
     display: flex;
     gap: 20px;

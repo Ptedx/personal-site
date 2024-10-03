@@ -1,7 +1,7 @@
 <script setup lang="ts">
   import HeroSection from '@/components/sections/HeroSection.vue'
   import AboutSection from '@/components/sections/AboutSection.vue'
-  import Knowledges from '@/components/sections/Knowledges.vue'
+  import Projects from '@/components/sections/Projects.vue';
   import WorkExperiences from '@/components/sections/WorkExperiences.vue'
 </script>
 
@@ -9,7 +9,7 @@
   <main class="container">
     <HeroSection />
     <AboutSection />
-    <Knowledges />
+    <Projects />
     <WorkExperiences />
   </main>
 </template>
