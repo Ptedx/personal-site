@@ -10,6 +10,7 @@
 
   interface btnProps{
       reversed?:boolean
+      content?:string
     }
     const props = defineProps<btnProps>()
     onMounted(()=>{
@@ -23,7 +24,7 @@
 <template>
     <div class="btn-div" ref="btnDiv"> 
         <button :class="{'btn-reverse': reversed, 'btn':!reversed}" v-on:click="showHelloWorld">
-            CONTATAR-ME
+            {{content? content:'CONTATAR-ME' }}
         </button>
         <div class="btn-line" ref="line"></div>
     </div>

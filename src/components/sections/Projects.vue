@@ -52,6 +52,7 @@
         align-items: center;
         gap: 10px;
         padding: 10px 30px;
+        text-align: center;
     }
     .project{
         width: 50%;
@@ -73,6 +74,7 @@
         .projects{
             flex-direction: column;
             gap:25px;
+            padding: 0;
         }
         .project{
             width: 100%;

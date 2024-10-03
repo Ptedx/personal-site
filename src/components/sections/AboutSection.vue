@@ -27,7 +27,7 @@
             </div>
             <div class="buttons">
                 <Button />
-                <Button :reversed="true" />
+                <Button content="DOWNLOAD CV" :reversed="true" />
             </div>
         </div>
     </section>
@@ -50,7 +50,6 @@
     @media (max-width:768px) {
         .AboutSection{
             flex-direction: column;
-            height: 100%;
         }
         .AboutSection > div{
             width: 100%;

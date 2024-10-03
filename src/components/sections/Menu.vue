@@ -42,7 +42,7 @@
             <RouterLink class="link" to="/about">Projects</RouterLink>
         </div>
         <div class="links" v-else>
-            <button><img src="..\..\assets\img\BurguerMenu.png" width="50px" alt="Menu Icon" srcset=""></button>
+            <button><img src="..\..\assets\img\BurguerMenu.png" width="40px" alt="Menu Icon" srcset=""></button>
         </div>
     </nav>
 </template>
