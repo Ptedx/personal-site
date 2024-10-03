@@ -1,0 +1,30 @@
+@import './base.css';
+
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  color: black;
+}
+
+#app{
+  min-height: 100vh;
+}
+ul {
+  list-style: disc inside;
+  margin: 20px;
+  padding: 0;
+}
+
+li {
+  margin: 10px 0;
+}
+
+strong {
+  color: black;
+  font-weight: bold;
+}
+
+h1, p,li{
+  cursor: default;
+}
