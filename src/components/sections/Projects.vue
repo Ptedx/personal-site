@@ -43,6 +43,7 @@
         flex-direction: column;
         padding: 10px 0;
         margin-bottom: 10px;
+        text-align: center;
     }
     .texts > h1{
         font-size: 40px;
@@ -52,7 +53,6 @@
         align-items: center;
         gap: 10px;
         padding: 10px 30px;
-        text-align: center;
     }
     .project{
         width: 50%;

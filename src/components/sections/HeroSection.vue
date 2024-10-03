@@ -48,7 +48,7 @@
         flex-direction: column;
     }
     .mainText> h1{
-        font-size: 60px;
+        font-size: 40px;
     }
     .mainText>h3{
         font-size: 24px;
