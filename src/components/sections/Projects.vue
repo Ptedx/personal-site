@@ -13,11 +13,11 @@
         </div>
         <div class="projects">
             <div class="project">
-                <img src="../../assets/img/project_1.png" alt="Projeto 1" width="100%">
+                <img src="../../assets/img/project_1.png" loading="lazy" alt="Projeto 1" width="100%">
                 <a href="https://all-coins.vercel.app" target="_blank" class="project-link"></a>
             </div>
             <div class="project">
-                <img src="../../assets/img/project-2.png" alt="Projeto 2" width="100%">
+                <img src="../../assets/img/project-2.png" loading="lazy" alt="Projeto 2" width="100%">
                 <a href="https://taxi-service-gamma.vercel.app" target="_blank" class="project-link"></a>
             </div>
         </div>

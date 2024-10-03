@@ -36,13 +36,13 @@
 
 <template>
     <nav ref="menu" :class="{'nav-background': hasScrolled, '': !hasScrolled}">
-        <img height="60px" src="../../assets/img/Vinicius-logo.png" alt="Logo Vini">
+        <img class="menu-icon" src="../../assets/img/Vinicius-logo.png" alt="Logo Vini">
         <div class="links" v-if="!isMobile">
             <RouterLink class="link" to="/">Knowledges</RouterLink>
             <RouterLink class="link" to="/about">Projects</RouterLink>
         </div>
         <div class="links" v-else>
-            <button><img src="..\..\assets\img\BurguerMenu.png" width="40px" alt="Menu Icon" srcset=""></button>
+            <button><img src="..\..\assets\img\BurguerMenu.png" rel="preload" as="image" width="40px" alt="Menu Icon" srcset=""></button>
         </div>
     </nav>
 </template>
@@ -58,10 +58,14 @@ nav {
     z-index: 2;
     position: fixed;
     width: 100%;
+    background: transparent;
 }
 .nav-background{
     background-color: white;
     box-shadow: 0px 1px 3px rgba(0,0,0,0.5);
+}
+.menu-icon{
+    height: 60px;
 }
 .links {
     display: flex;

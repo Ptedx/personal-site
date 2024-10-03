@@ -3,11 +3,11 @@
     import { gsap } from 'gsap';
     import {ref, onMounted} from 'vue'
 
-    const image = ref<HTMLDivElement>()
+    const image = ref<HTMLImageElement>()
 
     onMounted(()=>{
         if(image.value){
-            gsap.fromTo(image.value,{ x:50, opacity:0,  duration:0.4}, {x:0,opacity:1, duration:0.4})
+            gsap.fromTo(image.value,{ x:50, opacity:0}, {x:0,opacity:1, duration:0.4})
         }
     })
 </script>
@@ -19,8 +19,8 @@
           <h3>FullStack Developer</h3>
           <Button />
         </div>
-        <div class="image" ref="image">
-          <img src="../../assets/img/Profile_s_bg.png" alt="Main Photo" width="100%">
+        <div class="image">
+          <img src="../../assets/img/Profile_s_bg.png" ref="image" alt="Main Photo" width="100%" height="100%">
         </div>
     </section>
 </template>
@@ -34,18 +34,18 @@
         align-items: center;
         justify-content: center;
     }
-    .HeroSection > div{
+    .HeroSection >div{
         width: 50%;
-        height: 100%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
     .mainText{
-        display: flex;
-        justify-content: center;
-        align-items: center;
         flex-direction: column;
+        height: 100%;
+    }
+    .image{
+        height: 100%;
     }
     .mainText> h1{
         font-size: 40px;
@@ -56,17 +56,17 @@
     @media (max-width:768px) {
         .HeroSection{
             flex-direction: column;
-            height: 100%;
+            justify-content: start;
+            overflow: hidden;
+        }
+        .mainText{
+            height: 35%;
+        }
+        .image{
+            height: 65%;
         }
         .HeroSection > div{
             width: 100%;
-            margin-bottom: 20px;
         }
-        .mainText{
-            padding: 10% 0; 
-        }
-    }
-    .image{
-        opacity: 0;
     }
 </style>

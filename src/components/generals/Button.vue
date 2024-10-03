@@ -47,6 +47,7 @@
         border: 2px solid #ffe46e;
         transition: 0.1s;
         cursor: pointer;
+        font-size: 18px;
     }
     .btn:hover{
         background-color: white;

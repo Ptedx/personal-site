@@ -7,7 +7,7 @@
 <template>
     <section class="AboutSection">
         <div class="about">
-            <img src="../../assets/img/background-2.png" alt="about me background" width="100%">
+            <img src="../../assets/img/background-2.png" loading="lazy" alt="about me background" width="100%" height="100%">
             <div>
                 <h1>SOBRE MIM</h1>
                 <Line />
