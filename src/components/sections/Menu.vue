@@ -1,6 +1,5 @@
 <script setup lang="ts">
     import { onMounted, onUnmounted, ref } from 'vue';
-    import { RouterLink } from 'vue-router'
     import {debounce} from 'lodash'
     const isMobile = ref(false)
     const menu = ref<HTMLDivElement>()
@@ -13,7 +12,6 @@
 
     const debounceFunction = debounce(()=>{
         getMobileSize()
-        console.log(isMobile.value)
     }, 1000/60)
 
     function handleScroll(){
@@ -45,8 +43,8 @@
     <nav ref="menu" :class="{'nav-background': hasScrolled, '': !hasScrolled}">
         <a href="/"><img class="menu-icon" src="../../assets/img/Vinicius-logo.png" alt="Logo Vini"></a>
         <div class="links" v-if="!isMobile">
-            <a class="link" href="#projectSection">Knowledges</a>
-            <a class="link" href="#workSection">Projects</a>
+            <a class="link" href="#projectSection">Projects</a>
+            <a class="link" href="#workSection">Experiences</a>
         </div>
         <div class="links" v-else>
             <button><img src="..\..\assets\img\BurguerMenu.png" width="40px" alt="Menu Icon" srcset=""></button>
