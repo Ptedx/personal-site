@@ -17,7 +17,7 @@
         <div class="mainText">
           <h1>Vinícius Costa</h1>
           <h3>FullStack Developer</h3>
-          <Button />
+          <Button link="https://w.app/viniciusNunes" />
         </div>
         <div class="image">
           <img src="../../assets/img/Profile_s_bg.png" ref="image" alt="Main Photo" width="100%" height="100%">
@@ -44,9 +44,6 @@
         flex-direction: column;
         height: 100%;
     }
-    .image{
-        height: 100%;
-    }
     .mainText> h1{
         font-size: 40px;
     }
@@ -60,10 +57,10 @@
             overflow: hidden;
         }
         .mainText{
-            height: 35%;
+            height: 30%;
         }
         .image{
-            height: 65%;
+            height: 60%;
         }
         .HeroSection > div{
             width: 100%;

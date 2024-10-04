@@ -11,6 +11,7 @@
   interface btnProps{
       reversed?:boolean
       content?:string
+      link?:string
     }
     const props = defineProps<btnProps>()
     onMounted(()=>{
@@ -23,9 +24,9 @@
 
 <template>
     <div class="btn-div" ref="btnDiv"> 
-        <button :class="{'btn-reverse': reversed, 'btn':!reversed}" v-on:click="showHelloWorld">
+        <a :class="{'btn-reverse': reversed, 'btn':!reversed}" target="_blank" :href="link">
             {{content? content:'CONTATAR-ME' }}
-        </button>
+        </a>
         <div class="btn-line" ref="line"></div>
     </div>
 </template>
@@ -37,7 +38,9 @@
         overflow: hidden;
     }
     .btn, .btn-reverse{
-        padding:15px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         background-color: #ffe46e;
         margin: 15px 0;
         font-weight: bold;
@@ -48,6 +51,8 @@
         transition: 0.1s;
         cursor: pointer;
         font-size: 18px;
+        text-decoration: none;
+        padding:15px 0;
     }
     .btn:hover{
         background-color: white;

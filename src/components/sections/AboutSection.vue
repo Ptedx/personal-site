@@ -26,8 +26,8 @@
                 </p>
             </div>
             <div class="buttons">
-                <Button />
-                <Button content="DOWNLOAD CV" :reversed="true" />
+                <Button link="https://w.app/viniciusNunes" />
+                <Button link="https://drive.google.com/file/d/1klEaQrGAfTrojErjx-IXRpbMxrfgfFEb/view?usp=sharing" content="DOWNLOAD CV" :reversed="true" />
             </div>
         </div>
     </section>

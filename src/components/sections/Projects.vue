@@ -18,7 +18,7 @@
             </div>
             <div class="project">
                 <img src="../../assets/img/project-2.png" loading="lazy" alt="Projeto 2" width="100%">
-                <a href="https://taxi-service-gamma.vercel.app" target="_blank" class="project-link"></a>
+                <a href="https://vital-agro-site.vercel.app" target="_blank" class="project-link"></a>
             </div>
         </div>
     </section>
