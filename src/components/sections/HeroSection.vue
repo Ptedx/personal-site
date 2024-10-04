@@ -17,24 +17,20 @@
     <section class="HeroSection">
         <div class="mainText">
           <h1>Vinícius Costa</h1>
-          <h3>FullStack Developer</h3>
+          <div class="d-center">
+              <h3>FullStack Developer</h3>
+              <a href="https://github.com/Ptedx" target="_blank">
+                    <img src="../../assets/img/github.png" alt="github link" width="30px">
+                </a>
+          </div>
           <Button link="https://w.app/viniciusNunes" />
           <div class="socialLinks">
-            <a href="https://github.com/Ptedx" target="_blank">
-                <img src="../../assets/img/github.png" alt="github link" width="30px">
-            </a>
-            <a href="https://www.linkedin.com/in/vinicosta37/" target="_blank">
-                <img src="../../assets/img/Linkedin.png" alt="linkedin link" width="30px">
-            </a>
-            <a href="mailto:vinicosta37@gmail.com" target="_blank">
-                <img src="../../assets/img/email.png" alt="email link" width="30px">
-            </a>
-            <a href="https://w.app/viniciusNunes" target="_blank">
-                <img src="../../assets/img/Cellphone.png" alt="instagram link" width="30px">
-            </a>
-            <a href="https://www.instagram.com/vinic.nunes/" target="_blank">
-                <img src="../../assets/img/instagram.png" alt="instagram link" width="30px">
-            </a>
+              
+            <img src="../../assets/img/react.png" alt="React" placeholder="React" width="30px">
+            <img src="../../assets/img/Node JS.png" alt="NodeJS" placeholder="NodeJS" width="30px">
+            <img src="../../assets/img/PostgreSQL.png" alt="PostgreSQL" placeholder="PostgreSQL" width="30px">
+            <img src="../../assets/img/mongodb.png" alt="mongodb" placeholder="MongoDB" width="30px">
+            <img src="../../assets/img/vuejs.png" alt="vuejs" placeholder="VueJS" width="30px">
 
           </div>
         </div>
@@ -76,10 +72,10 @@
             overflow: hidden;
         }
         .mainText{
-            height: 30%;
+            height: 50%;
         }
         .image{
-            height: 60%;
+            height: 50%;
         }
         .HeroSection > div{
             width: 100%;
