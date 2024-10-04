@@ -1,9 +1,25 @@
 <script setup lang="ts">
+    import { onMounted } from 'vue';
     import Line from '../generals/Line.vue';
+    import gsap from 'gsap';
+
+
+    onMounted(() => {     
+        gsap.from('.projectSection',{
+            opacity:0,
+            scrollTrigger:{
+                trigger: '.projectSection',
+                start:'top 60%',
+                end: 'center 40%',
+                scrub: 0.5,
+            }
+        })
+    })
+
 </script>
 
 <template>
-    <section class="infoSection">
+    <section class="projectSection" id="projectSection">
         <div class="texts">
             <h1>PROJETOS</h1>
             <Line width="50%"/>
@@ -25,15 +41,16 @@
 </template>
 
 <style>
-    .infoSection{
+    .projectSection, .workSection{
         width: 100%;
         padding: 80px 10px;
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        position: relative;
     }
-    .infoSection > div{
+    .projectSection > div, .workSection > div{
         width: 100%;
         display: flex;
     }

@@ -1,12 +1,12 @@
 <script setup lang="ts">
   import Menu from './components/sections/Menu.vue';
-  import { RouterView} from 'vue-router'
- 
+  import HomeView from './views/HomeView.vue';
+
 </script>
 
 <template>
       <Menu />
-      <RouterView />
+      <HomeView /> 
 </template>
 
 <style>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
     import { onMounted, onUnmounted, ref } from 'vue';
     import { RouterLink } from 'vue-router'
-
+    import {debounce} from 'lodash'
     const isMobile = ref(false)
     const menu = ref<HTMLDivElement>()
     const initialPosition = ref(0)
@@ -11,6 +11,11 @@
         isMobile.value =  window.innerWidth <= 768 ? true : false
     }
 
+    const debounceFunction = debounce(()=>{
+        getMobileSize()
+        console.log(isMobile.value)
+    }, 1000/60)
+
     function handleScroll(){
         if(menu.value){
             const currentPosition = menu.value.getBoundingClientRect().top + window.scrollY
@@ -18,28 +23,30 @@
         }
     }
 
+    const debounceScroll = debounce(()=>{handleScroll()}, 1000/90)
+
     onMounted(()=>{
         if(menu.value){
             initialPosition.value = menu.value.getBoundingClientRect().top + window.scrollY
         }
         getMobileSize()
-        window.addEventListener('scroll', handleScroll)
-        window.addEventListener('resize', getMobileSize)
+        window.addEventListener('scroll', debounceScroll)
+        window.addEventListener('resize', debounceFunction)
     })
 
     onUnmounted(() => {
-        window.removeEventListener('resize', getMobileSize)
-        window.removeEventListener('scroll', handleScroll)
+        window.removeEventListener('resize', debounceScroll)
+        window.removeEventListener('scroll', debounceFunction)
     })
 
 </script>
 
 <template>
     <nav ref="menu" :class="{'nav-background': hasScrolled, '': !hasScrolled}">
-        <img class="menu-icon" src="../../assets/img/Vinicius-logo.png" alt="Logo Vini">
+        <a href="/"><img class="menu-icon" src="../../assets/img/Vinicius-logo.png" alt="Logo Vini"></a>
         <div class="links" v-if="!isMobile">
-            <RouterLink class="link" to="/">Knowledges</RouterLink>
-            <RouterLink class="link" to="/about">Projects</RouterLink>
+            <a class="link" href="#projectSection">Knowledges</a>
+            <a class="link" href="#workSection">Projects</a>
         </div>
         <div class="links" v-else>
             <button><img src="..\..\assets\img\BurguerMenu.png" width="40px" alt="Menu Icon" srcset=""></button>

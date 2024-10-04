@@ -4,12 +4,13 @@
     import {ref, onMounted} from 'vue'
 
     const image = ref<HTMLImageElement>()
-
+   
     onMounted(()=>{
         if(image.value){
             gsap.fromTo(image.value,{ x:50, opacity:0}, {x:0,opacity:1, duration:0.4})
         }
     })
+
 </script>
 
 <template>

@@ -1,6 +1,20 @@
 <script setup lang="ts">
+   import { onMounted } from 'vue';
    import Button from '../generals/Button.vue';
    import Line from '../generals/Line.vue';
+   import gsap from 'gsap';
+
+    onMounted(() => {
+        gsap.from('.AboutSection', {
+            opacity:0,
+            scrollTrigger: {
+                trigger: '.AboutSection',
+                start: 'top center',
+                end: 'center center',
+                scrub: 0.5,
+            }
+        });
+    });
 
 </script>
 
@@ -12,7 +26,6 @@
                 <h1>SOBRE MIM</h1>
                 <Line />
             </div>
-          <!-- Transformar o button em um component-->
         </div>
         <div class="items">
             <div class="text">
@@ -35,11 +48,12 @@
 
 <style>
     .AboutSection{
-        padding: 120px 15px;
+        padding: 80px 15px;
         width: 100%;
         display: flex;
         align-items: center;
         justify-content: center;
+        position: relative;
     }
     .AboutSection > div{
         width: 50%;

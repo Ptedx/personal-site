@@ -1,9 +1,23 @@
 <script setup lang="ts">
     import Line from '../generals/Line.vue';
+    import gsap from 'gsap';
+    import { onMounted } from 'vue';
+
+    onMounted(()=>{
+        gsap.from('.workSection',{
+            opacity: 0,
+            scrollTrigger:{
+                trigger:'.workSection',
+                start: 'top 80%',
+                end: 'center 60%',
+                scrub: 0.5,
+            }
+        })
+    })
 </script>
 
 <template>
-    <section class="infoSection">
+    <section class="workSection" id="workSection">
         <div class="texts">
             <h1>EXPERIÊNCIAS</h1>
             <Line width="50%"/>

@@ -1,9 +1,6 @@
 <script setup lang="ts">
     import {gsap} from 'gsap'
     import { ref, onMounted } from 'vue';
-    function showHelloWorld(){
-    console.log('Opa, me clicou ;)')
-  }
 
   const line = ref<HTMLDivElement>()
   const btnDiv = ref<HTMLDivElement>()
@@ -11,7 +8,7 @@
   interface btnProps{
       reversed?:boolean
       content?:string
-      link?:string
+      link:string
     }
     const props = defineProps<btnProps>()
     onMounted(()=>{
