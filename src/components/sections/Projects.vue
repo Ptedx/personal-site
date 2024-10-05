@@ -42,6 +42,7 @@
 
 <style>
     .projectSection, .workSection{
+        scroll-margin-top: 80px;
         width: 100%;
         padding: 80px 10px;
         display: flex;

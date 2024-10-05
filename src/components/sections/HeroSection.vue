@@ -81,6 +81,12 @@
             width: 100%;
         }
     }
+    .d-center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+    }
     .socialLinks{
         display: flex;
         gap:20px;

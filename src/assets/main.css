@@ -32,10 +32,3 @@ strong {
 h1, p,li{
   cursor: default;
 }
-
-.d-center{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 15px;
-}

@@ -1,10 +1,16 @@
 <script setup lang="ts">
     import { onMounted, onUnmounted, ref } from 'vue';
     import {debounce} from 'lodash'
+import ModalMenu from '../generals/ModalMenu.vue';
     const isMobile = ref(false)
     const menu = ref<HTMLDivElement>()
     const initialPosition = ref(0)
     let hasScrolled = ref(false)
+    let isPressed = ref(false)
+
+    function handleMenu(){
+        isPressed.value = !isPressed.value
+    }
 
     function getMobileSize() {
         isMobile.value =  window.innerWidth <= 768 ? true : false
@@ -41,13 +47,14 @@
 
 <template>
     <nav ref="menu" :class="{'nav-background': hasScrolled, '': !hasScrolled}">
-        <a href="/"><img class="menu-icon" src="../../assets/img/Vinicius-logo.png" alt="Logo Vini"></a>
+        <a href="#"><img class="menu-icon" src="../../assets/img/Vinicius-logo.png" alt="Logo Vini"></a>
         <div class="links" v-if="!isMobile">
             <a class="link" href="#projectSection">Projects</a>
             <a class="link" href="#workSection">Experiences</a>
         </div>
         <div class="links" v-else>
-            <button><img src="..\..\assets\img\BurguerMenu.png" width="40px" alt="Menu Icon" srcset=""></button>
+            <button :onclick="handleMenu"><img src="..\..\assets\img\BurguerMenu.png" width="40px" alt="Menu Icon" srcset=""></button>    
+            <ModalMenu :isPressed="isPressed" :function="handleMenu" /> 
         </div>
     </nav>
 </template>
