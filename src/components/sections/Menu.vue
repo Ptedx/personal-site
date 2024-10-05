@@ -105,7 +105,6 @@ button{
 }
 button:focus, button:active{
     background:transparent;
-    outline: none;
     border: none;
     -webkit-tap-highlight-color: transparent;
 }

@@ -8,7 +8,7 @@
             opacity: 0,
             scrollTrigger:{
                 trigger:'.workSection',
-                start: 'top 80%',
+                start: 'top center',
                 end: 'center 60%',
                 scrub: 0.5,
             }
