@@ -11,8 +11,8 @@
 <template>
     <div class="mainModal" :class="{'hiddenModal': !isPressed}">
         <div class="menuModal" :class="{'show': isPressed, 'hide': !isPressed}">
-            <a class="link" href="#projectSection">Projects</a>
-            <a class="link" href="#workSection">Experiences</a>
+            <a class="link" href="#projectSection">Projetos</a>
+            <a class="link" href="#contacts">Contatos</a>
         </div>
         <button class="close" :onclick="function"/>
     </div>

@@ -3,6 +3,7 @@
   import AboutSection from '@/components/sections/AboutSection.vue'
   import Projects from '@/components/sections/Projects.vue';
   import WorkExperiences from '@/components/sections/WorkExperiences.vue'
+import Contact from '@/components/sections/Contact.vue';
 </script>
 
 <template>
@@ -11,6 +12,7 @@
     <AboutSection />
     <Projects />
     <WorkExperiences />
+    <Contact />
   </main>
 </template>
 

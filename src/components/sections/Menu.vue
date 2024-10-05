@@ -49,8 +49,8 @@ import ModalMenu from '../generals/ModalMenu.vue';
     <nav ref="menu" :class="{'nav-background': hasScrolled, '': !hasScrolled}">
         <a href="#"><img class="menu-icon" src="../../assets/img/Vinicius-logo.png" alt="Logo Vini"></a>
         <div class="links" v-if="!isMobile">
-            <a class="link" href="#projectSection">Projects</a>
-            <a class="link" href="#workSection">Experiences</a>
+            <a class="link" href="#projectSection">Projetos</a>
+            <a class="link" href="#contacts">Contatos</a>
         </div>
         <div class="links" v-else>
             <button :onclick="handleMenu"><img src="..\..\assets\img\BurguerMenu.png" width="40px" alt="Menu Icon" srcset=""></button>    
