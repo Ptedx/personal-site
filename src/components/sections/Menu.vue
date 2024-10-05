@@ -1,12 +1,14 @@
 <script setup lang="ts">
     import { onMounted, onUnmounted, ref } from 'vue';
     import {debounce} from 'lodash'
-import ModalMenu from '../generals/ModalMenu.vue';
+    import ModalMenu from '../generals/ModalMenu.vue';
+    import clickedButton from '../../assets/img/Burguer-menu-clicked.png'
+    import normalButton from '../../assets/img/BurguerMenu.png'
     const isMobile = ref(false)
     const menu = ref<HTMLDivElement>()
     const initialPosition = ref(0)
     let hasScrolled = ref(false)
-    let isPressed = ref(false)
+    let isPressed = ref<boolean>(false)
 
     function handleMenu(){
         isPressed.value = !isPressed.value
@@ -53,7 +55,14 @@ import ModalMenu from '../generals/ModalMenu.vue';
             <a class="link" href="#contacts">Contatos</a>
         </div>
         <div class="links" v-else>
-            <button :onclick="handleMenu"><img src="..\..\assets\img\BurguerMenu.png" width="40px" alt="Menu Icon" srcset=""></button>    
+            <button :onclick="handleMenu">
+                <img 
+                    :src="isPressed? clickedButton: normalButton"
+                    width="40px" 
+                    alt="Menu Icon" 
+                    srcset=""
+                >
+            </button>    
             <ModalMenu :isPressed="isPressed" :function="handleMenu" /> 
         </div>
     </nav>
@@ -88,12 +97,16 @@ nav {
     text-decoration: none;
 }
 button{
-    height: 50px;
+    height: 40px;
     background-color: transparent;
     border: none;
     cursor: pointer;
+    cursor: pointer;
 }
-button:focus{
+button:focus, button:active{
+    background:transparent;
+    outline: none;
     border: none;
+    -webkit-tap-highlight-color: transparent;
 }
 </style>
