@@ -11,7 +11,7 @@ import Line from '../generals/Line.vue';
         <div class="contactLinks">
             <div class="contactLink">
                 <a href="https://www.linkedin.com/in/vinicosta37/" target="_blank">
-                    <img src="../../assets/img/linkedin.png" loading="lazy" alt="Projeto 1" width="50px">
+                    <img src="../../assets/img/Linkedin.png" loading="lazy" alt="Projeto 1" width="50px">
                 </a>
                 <p>Linkedin</p>
             </div>
